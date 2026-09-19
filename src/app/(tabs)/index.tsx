@@ -15,19 +15,19 @@ export default function App() {
 
       <Link
         href="/onboarding"
-        className="mt-4 bg-primary text-white px-4 font-sans-bold py-2 rounded"
+        className="mt-4 bg-primary text-white px-4 font-sans-bold p-4 rounded"
       >
         Go to Onboarding
       </Link>
       <Link
         href="/(auth)/sign-in"
-        className="mt-4 bg-primary text-white px-4 font-sans-bold py-2 rounded"
+        className="mt-4 bg-primary text-white px-4 font-sans-bold p-4 rounded"
       >
         Go to Sign In
       </Link>
       <Link
         href="/(auth)/sign-up"
-        className="mt-4 bg-primary text-white px-4 font-sans-bold py-2 rounded"
+        className="mt-4 bg-primary text-white px-4 font-sans-bold p-4 rounded"
       >
         Go to Sign Up
       </Link>
