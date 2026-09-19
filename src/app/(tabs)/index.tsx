@@ -1,10 +1,16 @@
 import "@/global.css";
 import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { styled } from "nativewind";
+import { Text } from "react-native";
+// import { SafeAreaView } from "react-native"; → Deprecated in React Native 0.70, use react-native-safe-area-context instead
+import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context"; // React Native docs
+
+// Wrap the SafeAreaView component with the styled function to let NativeWind handle the styling
+const SafeAreaView = styled(RNSafeAreaView);
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
+    <SafeAreaView className="flex-1 bg-background p-5">
       <Text className="text-xl font-bold text-blue-500">
         Welcome to Nativewind!
       </Text>
@@ -47,6 +53,6 @@ export default function App() {
       >
         Claude Max Subscription
       </Link>
-    </View>
+    </SafeAreaView>
   );
 }
