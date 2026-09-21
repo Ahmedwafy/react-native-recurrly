@@ -227,7 +227,7 @@
   }
 
   .auth-safe-area {
-    @apply flex-1 bg-background;
+    @apply flex-1 bg-background mt-10;
   }
 
   .auth-screen {
@@ -283,7 +283,7 @@
   }
 
   .auth-field {
-    @apply gap-2;
+    @apply gap-2 pl-3;
   }
 
   .auth-label {
