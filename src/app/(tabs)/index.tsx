@@ -13,6 +13,7 @@ import ListHeading from "@/components/ListHeading";
 import SubscriptionCard from "@/components/SubscriptionCard";
 import UpcomingSubscriptionCard from "@/components/UpcomingSubscriptionCard";
 import "@/global.css";
+import { useUser } from "@clerk/expo";
 import dayjs from "dayjs";
 import { useState } from "react";
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context"; // React Native docs
@@ -25,6 +26,13 @@ export default function App() {
   const [expandedSubscriptionId, setExpandedSubscriptionId] = useState<
     string | null
   >(null);
+  const { user } = useUser();
+
+  const displayName =
+    user?.fullName ||
+    user?.firstName ||
+    user?.emailAddresses?.[0]?.emailAddress ||
+    HOME_USER.name;
 
   return (
     <SafeAreaView className="flex-1 bg-background p-5">
@@ -34,8 +42,7 @@ export default function App() {
             <View className="home-header">
               <View className="home-user">
                 <Image source={images.avatar} className="home-avatar"></Image>
-                {/* // TODO: use dynamic name. */}
-                <Text className="home-user-name">{HOME_USER.name}</Text>
+                <Text className="home-user-name">{displayName}</Text>
               </View>
 
               <Image source={icons.add} className="home-add-icon" />
@@ -74,7 +81,7 @@ export default function App() {
               />
             </View>
 
-            <ListHeading title="All Subscription" />
+            <ListHeading title="All Subscriptions" />
           </>
         )}
         data={HOME_SUBSCRIPTIONS}
