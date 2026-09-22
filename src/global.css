@@ -226,6 +226,245 @@
     @apply py-4 text-sm font-sans-medium text-black/60;
   }
 
+  .settings-title {
+    @apply text-3xl font-sans-extrabold text-primary;
+  }
+
+  .settings-subtitle {
+    @apply mt-1 text-base font-sans-medium text-muted-foreground;
+  }
+
+  .settings-profile-card {
+    @apply mt-8 flex-row items-center rounded-bl-4xl rounded-tr-4xl bg-accent p-5;
+  }
+
+  .settings-avatar {
+    @apply size-20 rounded-full bg-background;
+  }
+
+  .settings-avatar-fallback {
+    @apply items-center justify-center;
+  }
+
+  .settings-avatar-text {
+    @apply text-3xl font-sans-extrabold text-primary;
+  }
+
+  .settings-profile-copy {
+    @apply ml-4 min-w-0 flex-1;
+  }
+
+  .settings-profile-name {
+    @apply text-xl font-sans-bold text-white;
+  }
+
+  .settings-profile-email {
+    @apply mt-1 text-sm font-sans-medium text-white/75;
+  }
+
+  .settings-status-row {
+    @apply mt-3 flex-row items-center;
+  }
+
+  .settings-status-dot {
+    @apply mr-2 size-2 rounded-full bg-white;
+  }
+
+  .settings-status-dot-muted {
+    @apply bg-white/45;
+  }
+
+  .settings-status-text {
+    @apply text-xs font-sans-semibold text-white/80;
+  }
+
+  .settings-details-card {
+    @apply mt-4 rounded-3xl border border-border bg-card p-5;
+  }
+
+  .settings-detail-row {
+    @apply flex-row items-center justify-between gap-4;
+  }
+
+  .settings-detail-label {
+    @apply text-sm font-sans-medium text-muted-foreground;
+  }
+
+  .settings-detail-value {
+    @apply max-w-[62%] text-right text-sm font-sans-bold text-primary;
+  }
+
+  .settings-detail-divider {
+    @apply my-4 h-px bg-border;
+  }
+
+  .settings-logout-button {
+    @apply mt-auto items-center rounded-2xl bg-primary py-4;
+  }
+
+  .insights-content {
+    @apply gap-5 px-5 pb-32 pt-6;
+  }
+
+  .insights-heading {
+    @apply flex-row items-end justify-between;
+  }
+
+  .insights-kicker {
+    @apply mb-2 text-xs font-sans-bold tracking-[1.5px] text-accent;
+  }
+
+  .insights-title {
+    @apply text-3xl font-sans-extrabold text-primary;
+  }
+
+  .insights-date-pill {
+    @apply rounded-full bg-primary px-3 py-2;
+  }
+
+  .insights-date-text {
+    @apply text-[10px] font-sans-bold tracking-[1px] text-background;
+  }
+
+  .insights-hero {
+    @apply min-h-44 flex-row items-center justify-between rounded-bl-4xl rounded-tr-4xl bg-primary px-6 py-5;
+  }
+
+  .insights-hero-label {
+    @apply mb-2 text-base font-sans-semibold text-background/65;
+  }
+
+  .insights-hero-amount {
+    @apply text-4xl font-sans-extrabold text-background;
+  }
+
+  .insights-hero-note {
+    @apply mt-2 text-sm font-sans-medium text-background/65;
+  }
+
+  .insights-hero-mark {
+    @apply size-16 items-center justify-center rounded-full bg-accent;
+  }
+
+  .insights-hero-mark-text {
+    @apply text-3xl font-sans-extrabold text-background;
+  }
+
+  .insights-stat-row {
+    @apply flex-row gap-3;
+  }
+
+  .insights-stat-card {
+    @apply min-h-28 flex-1 justify-between rounded-2xl border border-border bg-card p-4;
+  }
+
+  .insights-stat-card-warm {
+    @apply bg-[#f4c7ab];
+  }
+
+  .insights-stat-label {
+    @apply text-sm font-sans-semibold text-primary/65;
+  }
+
+  .insights-stat-value {
+    @apply mt-2 text-xl font-sans-extrabold text-primary;
+  }
+
+  .insights-stat-note {
+    @apply text-xs font-sans-medium text-primary/55;
+  }
+
+  .insights-section-heading {
+    @apply flex-row items-center justify-between;
+  }
+
+  .insights-section-title {
+    @apply text-xl font-sans-bold text-primary;
+  }
+
+  .insights-section-caption {
+    @apply text-[10px] font-sans-bold tracking-[1px] text-muted-foreground;
+  }
+
+  .insights-chart-card,
+  .insights-bars-card {
+    @apply rounded-3xl border border-border bg-card p-5;
+  }
+
+  .insights-chart-layout {
+    @apply flex-row items-center;
+  }
+
+  .insights-donut-wrap {
+    @apply relative size-31 items-center justify-center;
+  }
+
+  .insights-donut-label {
+    @apply absolute items-center;
+  }
+
+  .insights-donut-total {
+    @apply text-sm font-sans-extrabold text-primary;
+  }
+
+  .insights-donut-caption {
+    @apply mt-0.5 text-[9px] font-sans-bold tracking-[1px] text-muted-foreground;
+  }
+
+  .insights-legend {
+    @apply ml-5 flex-1 gap-4;
+  }
+
+  .insights-legend-row,
+  .insights-legend-name,
+  .insights-bar-label-row {
+    @apply flex-row items-center justify-between;
+  }
+
+  .insights-legend-name {
+    @apply min-w-0 flex-1 justify-start gap-2;
+  }
+
+  .insights-legend-dot {
+    @apply size-2.5 rounded-full;
+  }
+
+  .insights-legend-text {
+    @apply flex-1 text-sm font-sans-semibold text-primary;
+  }
+
+  .insights-legend-value {
+    @apply ml-2 text-sm font-sans-bold text-muted-foreground;
+  }
+
+  .insights-bar-row {
+    @apply mb-5 gap-2;
+  }
+
+  .insights-bar-row:last-child {
+    @apply mb-0;
+  }
+
+  .insights-bar-label {
+    @apply text-sm font-sans-semibold text-primary;
+  }
+
+  .insights-bar-value {
+    @apply text-sm font-sans-bold text-muted-foreground;
+  }
+
+  .insights-bar-track {
+    @apply h-3 overflow-hidden rounded-full bg-muted;
+  }
+
+  .insights-bar-fill {
+    @apply h-full rounded-full;
+  }
+
+  .insights-empty {
+    @apply py-3 text-sm font-sans-medium text-muted-foreground;
+  }
+
   .subscription-search {
     @apply mb-5 rounded-2xl border border-border bg-card px-4 py-4 text-base font-sans-medium text-primary;
   }
@@ -319,7 +558,7 @@
   }
 
   .auth-button-text {
-    @apply text-base font-sans-bold text-primary;
+    @apply text-base font-sans-bold text-accent;
   }
 
   .auth-secondary-button {

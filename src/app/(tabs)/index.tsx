@@ -31,6 +31,14 @@ export default function App() {
   >(null);
   const { subscriptions, addSubscription } = useSubscriptions();
   const { user } = useUser();
+  const upcomingSubscriptions = UPCOMING_SUBSCRIPTIONS.filter(
+    (upcomingSubscription) =>
+      !subscriptions.some(
+        (subscription) =>
+          subscription.name.trim().toLowerCase() ===
+          upcomingSubscription.name.trim().toLowerCase(),
+      ),
+  );
 
   const displayName =
     user?.fullName ||
@@ -46,7 +54,13 @@ export default function App() {
             <View className="home-header">
               <View className="home-user">
                 <Image source={images.avatar} className="home-avatar"></Image>
-                <Text className="home-user-name">{displayName}</Text>
+                <Text
+                  className="home-user-name max-w-[170px]"
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                >
+                  {displayName}
+                </Text>
               </View>
 
               <Pressable
@@ -75,7 +89,7 @@ export default function App() {
             <View className="mb-5">
               <ListHeading title="Upcoming" />
               <FlatList
-                data={UPCOMING_SUBSCRIPTIONS}
+                data={upcomingSubscriptions}
                 renderItem={({ item }) => (
                   <UpcomingSubscriptionCard {...item} />
                 )}

@@ -25,6 +25,7 @@ const CATEGORIES = [
   "Other",
 ] as const;
 // "Entertainment" | "AI Tools" | "Developer Tools" | "Design" | "Productivity" | "Cloud" | "Music" | "Other"
+
 const CATEGORY_COLORS: Record<(typeof CATEGORIES)[number], string> = {
   Entertainment: "#f5c542",
   "AI Tools": "#b8d4e3",
