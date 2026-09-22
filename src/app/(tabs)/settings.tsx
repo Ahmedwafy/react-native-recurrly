@@ -111,7 +111,7 @@ const Settings = () => {
 
         <TouchableOpacity
           onPress={handleSignOut}
-          className="settings-logout-button"
+          className="settings-logout-button mb-20"
         >
           <Text className="auth-button-text">Log out</Text>
         </TouchableOpacity>
