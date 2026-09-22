@@ -113,7 +113,7 @@ const Settings = () => {
           onPress={handleSignOut}
           className="settings-logout-button mb-20"
         >
-          <Text className="auth-button-text">Log-out</Text>
+          <Text className="auth-button-text">Log out</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
