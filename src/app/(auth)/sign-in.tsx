@@ -2,6 +2,8 @@ import { useAuth, useClerk, useSignIn } from "@clerk/expo";
 import { Ionicons } from "@expo/vector-icons";
 import { Link, router } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
+
+import { posthog } from "@/lib/posthog";
 import {
   ActivityIndicator,
   KeyboardAvoidingView,
@@ -91,6 +93,7 @@ const SignIn = () => {
 
       if (signIn.status === "complete" && signIn.createdSessionId) {
         await setActive({ session: signIn.createdSessionId });
+        posthog?.capture("sign_in_completed");
         router.replace("/(tabs)");
         return;
       }

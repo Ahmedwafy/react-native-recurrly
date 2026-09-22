@@ -2,6 +2,8 @@ import { useAuth, useClerk, useSignUp } from "@clerk/expo";
 import { Ionicons } from "@expo/vector-icons";
 import { Link, router } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
+
+import { posthog } from "@/lib/posthog";
 import {
   ActivityIndicator,
   KeyboardAvoidingView,
@@ -110,6 +112,7 @@ const SignUp = () => {
         return;
       }
 
+      posthog?.capture("sign_up_started");
       setIsVerifying(true);
     } catch (err: any) {
       setError(
@@ -154,6 +157,7 @@ const SignUp = () => {
 
       if (signUp.createdSessionId) {
         await setActive({ session: signUp.createdSessionId });
+        posthog?.capture("sign_up_completed");
         router.replace("/(tabs)");
         return;
       }
@@ -188,6 +192,7 @@ const SignUp = () => {
 
       setVerificationCode("");
       setResendCooldown(30);
+      posthog?.capture("verification_code_resent");
     } catch (err: any) {
       setError(
         err?.errors?.[0]?.message ||

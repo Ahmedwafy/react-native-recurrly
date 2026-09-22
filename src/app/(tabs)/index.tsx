@@ -18,6 +18,7 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context"; // React Native docs
 import { formatCurrency } from "../../lib/utils";
+import { posthog } from "@/lib/posthog";
 
 // Wrap the SafeAreaView component with the styled function to let NativeWind handle the styling
 const SafeAreaView = styled(RNSafeAreaView);
@@ -90,11 +91,15 @@ export default function App() {
           <SubscriptionCard
             {...item}
             expanded={expandedSubscriptionId === item.id}
-            onPress={() =>
-              setExpandedSubscriptionId((currentId) =>
-                currentId === item.id ? null : item.id,
-              )
-            }
+            onPress={() => {
+              const isExpanded = expandedSubscriptionId !== item.id;
+              posthog?.capture("subscription_details_toggled", {
+                is_expanded: isExpanded,
+                subscription_category: item.category ?? null,
+                billing_period: item.billing,
+              });
+              setExpandedSubscriptionId(isExpanded ? item.id : null);
+            }}
           />
         )}
         extraData={expandedSubscriptionId}
